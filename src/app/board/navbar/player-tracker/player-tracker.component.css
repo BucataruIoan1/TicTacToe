@@ -1,0 +1,32 @@
+.player-tracker {
+    border: 1px solid #dadce0;
+    height: 50px;
+    width: 300px;
+    margin: 10px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.player-turn {
+    border-bottom: 3px solid #81ecec;
+}
+
+.player-tracker-container {
+    width: 100%;
+    display: flex;
+}
+
+.symbol-xo {
+    height: 18px;
+    width: 18px;
+    margin-left: 10px;
+}
+
+.current-score {
+    font-size: 24px;
+    color: #70757a;
+    padding-right: 3%;
+}

@@ -1,0 +1,13 @@
+.navbar {
+    height: 20vh;
+    background-color: whitesmoke;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.info-game {
+    margin: 10px 0 5px 0;
+    color: #70757a;
+}

@@ -1,0 +1,10 @@
+<div class="player-tracker-container">
+    <div class="player-tracker" [ngClass]="{'player-turn': isFirstPlayer}">
+        <img class="symbol-xo" src="assets/images/close.png" alt="x-images">
+        <span class="current-score">-</span>
+    </div>
+    <div class="player-tracker" [ngClass]="{'player-turn': isSecondPlayer}">
+        <img class="symbol-xo" src="assets/images/letter-o.png" alt="x-images">
+        <span class="current-score">-</span>
+    </div>
+</div>
