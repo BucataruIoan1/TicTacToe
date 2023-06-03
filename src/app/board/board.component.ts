@@ -12,4 +12,6 @@ export class BoardComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  boxItems: any[] = Array(9).fill(0);
+
 }

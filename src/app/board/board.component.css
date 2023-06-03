@@ -1,4 +1,61 @@
-.board-game {
+.board-game-container {
     height: 100vh;
     background-color: #81ecec;
+}
+
+.board-game {
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+
+}
+
+.grid-item {
+    width: 140px;
+    height: 140px;
+    padding: 10px;
+    border: 3px solid gray;
+}
+
+.border-box-0 {
+    border-left: none;
+    border-top: none;
+}
+
+.border-box-1 {
+    border-top: none;
+}
+
+.border-box-2 {
+    border-top: none;
+    border-right: none;
+}
+
+.border-box-3 {
+    border-left: none;
+}
+
+.border-box-5 {
+    border-right: none;
+}
+
+.border-box-6 {
+    border-left: none;
+    border-bottom: none;
+}
+
+.border-box-7 {
+    border-bottom: none;
+}
+
+.border-box-8 {
+    border-right: none;
+    border-bottom: none;
 }
