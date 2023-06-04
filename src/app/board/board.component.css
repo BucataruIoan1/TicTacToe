@@ -18,10 +18,14 @@
 }
 
 .grid-item {
-    width: 140px;
-    height: 140px;
+    width: 150px;
+    height: 150px;
     padding: 10px;
     border: 3px solid gray;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .border-box-0 {
@@ -58,4 +62,40 @@
 .border-box-8 {
     border-right: none;
     border-bottom: none;
+}
+
+.x-cell::before,
+.x-cell::after {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 95px;
+    background-color: black;
+}
+
+.x-cell::before {
+    transform: rotate(45deg);
+}
+
+.x-cell::after {
+    transform: rotate(-45deg);
+}
+
+.o-cell::before,
+.o-cell::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+}
+
+.o-cell::before {
+    width: 90px;
+    height: 90px;
+    background-color: black;
+}
+
+.o-cell::after {
+    width: 70px;
+    height: 70px;
+    background-color: #81ecec;
 }

@@ -2,11 +2,22 @@
     <app-navbar></app-navbar>
     <div class="board-game">
         <div class="box-container">
-                <div class="grid-item" *ngFor="let item of boxItems; let i = index"
-                    [ngClass]="{'border-box-0': i === 0, 'border-box-1': i === 1, 'border-box-2': i === 2,
-                                'border-box-3': i === 3, 'border-box-5': i === 5, 'border-box-6': i === 6,
-                                'border-box-7': i === 7, 'border-box-8': i === 8}">
-                </div>
+            <div class="grid-item" *ngFor="let item of boxItems; let i = index"
+            [ngClass]="{
+                'border-box-0': i === 0,
+                'border-box-1': i === 1,
+                'border-box-2': i === 2,
+                'border-box-3': i === 3,
+                'border-box-5': i === 5,
+                'border-box-6': i === 6,
+                'border-box-7': i === 7,
+                'border-box-8': i === 8,
+                'x-cell': isBoxXPress[i],
+                'o-cell': isBoxOPress[i]
+            }"
+            (click)="clickedBox(i)">
+        </div>
         </div>
     </div>
 </div>
+
