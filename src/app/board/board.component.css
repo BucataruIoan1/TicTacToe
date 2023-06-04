@@ -99,3 +99,7 @@
     height: 70px;
     background-color: #81ecec;
 }
+
+.disabled {
+    pointer-events: none;
+}
