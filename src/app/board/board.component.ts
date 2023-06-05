@@ -13,7 +13,6 @@ export class BoardComponent implements OnInit {
   }
 
   boxItems: any[] = Array(9).fill(0);
-
   currentTurnNumber: number = 0;
   currentBox: number = 0;
   isBoxXPress: boolean[] = [false, false, false, false, false, false, false, false, false];
@@ -29,26 +28,30 @@ export class BoardComponent implements OnInit {
     [2, 4, 6]
   ];
   isBoxDisabled: boolean[] = [false, false, false, false, false, false, false, false, false];
+  isGameOver: boolean = false;
 
   clickedBox(index: number) {
-    if(!this.isBoxDisabled[index]) {
-      this.isBoxDisabled[index] = true;
-    }
-    if (this.currentTurnNumber < 9) {
-      if (
-        (this.currentTurnNumber % 2 === 0) &&
-        !this.isBoxXPress[index]
-      ) {
-        this.isBoxXPress[index] = true;
-      } else if (
-        (this.currentTurnNumber % 2 !== 0) &&
-        !this.isBoxOPress[index]
-      ) {
-        this.isBoxOPress[index] = true;
+    if(!this.isGameOver) {
+      if(!this.isBoxDisabled[index]) {
+        this.isBoxDisabled[index] = true;
       }
-      this.currentTurnNumber++;
-
-      this.checkWinningCondition();
+      if (this.currentTurnNumber < 9) {
+        if (
+          (this.currentTurnNumber % 2 === 0) &&
+          !this.isBoxXPress[index]
+        ) {
+          this.isBoxXPress[index] = true;
+        } else if (
+          (this.currentTurnNumber % 2 !== 0) &&
+          !this.isBoxOPress[index]
+        ) {
+          this.isBoxOPress[index] = true;
+        }
+        this.currentTurnNumber++;
+  
+        this.checkWinningCondition();
+    }
+    
     }
   }
 
@@ -65,7 +68,7 @@ export class BoardComponent implements OnInit {
       ) {
         // X player wins
         console.log("X player wins");
-        this.resetGame();
+        this.isGameOver = true;
       } else if (
         this.isBoxOPress[box1] &&
         this.isBoxOPress[box2] &&
@@ -73,7 +76,7 @@ export class BoardComponent implements OnInit {
       ) {
         // O player wins
         console.log("O player wins");
-        this.resetGame();
+        this.isGameOver = true;
       }
     }
   }
@@ -85,7 +88,8 @@ export class BoardComponent implements OnInit {
         this.isBoxXPress[i] = false;
         this.isBoxDisabled[i] = false;
         this.currentTurnNumber = 0;
-      }, 1500)
+        this.isGameOver = false;
+      }, 500)
 
     }
   }

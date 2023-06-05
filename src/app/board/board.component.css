@@ -8,6 +8,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 
 .box-container {
@@ -26,6 +27,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 }
 
 .border-box-0 {
@@ -102,4 +104,74 @@
 
 .disabled {
     pointer-events: none;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.strike-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.strike {
+    position: absolute;
+    background-color: red;
+}
+
+.strike-row-1 {
+    width: 450px;
+    height: 4px;
+    top: 175px;
+}
+
+.strike-row-2 {
+    width: 450px;
+    height: 4px;
+    top: 330px;
+}
+
+.strike-row-3 {
+    width: 450px;
+    height: 4px;
+    top: 485px;
+}
+
+.strike-column-1 {
+    height: 450px;
+    width: 4px;
+    left: 689px;
+}
+
+.strike-column-2 {
+    height: 450px;
+    width: 4px;
+    left: 839px;
+}
+
+.strike-column-3 {
+    height: 450px;
+    width: 4px;
+    left: 989px;
+}
+
+.strike-diagonal-1 {
+    width: 420px;
+    height: 4px;
+    transform: skewY(45deg);
+}
+
+.strike-diagonal-2 {
+    width: 420px;
+    height: 4px;
+    transform: skewY(-45deg);
 }
