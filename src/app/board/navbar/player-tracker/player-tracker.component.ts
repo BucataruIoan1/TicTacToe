@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { TogglePlayerService } from 'src/app/toggle-player.service';
 
 @Component({
   selector: 'app-player-tracker',
@@ -7,12 +8,11 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class PlayerTrackerComponent implements OnInit {
 
-  constructor() { }
+
+  constructor(public togglePlayerService: TogglePlayerService) { }
 
   ngOnInit(): void {
-  }
 
-  @Input() isFirstPlayer : boolean = true;
-  @Input() isSecondPlayer : boolean = false;
+  }
 
 }

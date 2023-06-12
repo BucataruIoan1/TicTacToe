@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-navbar',
@@ -7,17 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  isFirstPlayer: boolean = true;
-  isSecondPlayer: boolean = false;
-
   constructor() { }
 
   ngOnInit(): void {
-  }
-
-  switchPlayer(): void {
-    this.isFirstPlayer = !this.isFirstPlayer;
-    this.isSecondPlayer = !this.isSecondPlayer;
   }
 
 }

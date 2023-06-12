@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TogglePlayerService } from '../toggle-player.service';
 
 @Component({
   selector: 'app-board',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BoardComponent implements OnInit {
 
-  constructor() { }
+  constructor(private togglePlayerService: TogglePlayerService) { }
 
   ngOnInit(): void {
   }
@@ -49,11 +50,15 @@ export class BoardComponent implements OnInit {
           !this.isBoxXPress[index]
         ) {
           this.isBoxXPress[index] = true;
+          this.togglePlayerService.firstPlayer = false;
+          this.togglePlayerService.secondPlayer = true;
         } else if (
           (this.currentTurnNumber % 2 !== 0) &&
           !this.isBoxOPress[index]
         ) {
           this.isBoxOPress[index] = true;
+          this.togglePlayerService.secondPlayer = false;
+          this.togglePlayerService.firstPlayer = true;
         }
         this.currentTurnNumber++;
   
@@ -103,6 +108,8 @@ export class BoardComponent implements OnInit {
         }
         
         this.isGameOver = true;
+        this.togglePlayerService.firstPlayer = false;
+        this.togglePlayerService.secondPlayer = false;
       } else if (
         this.isBoxOPress[box1] &&
         this.isBoxOPress[box2] &&
@@ -136,11 +143,15 @@ export class BoardComponent implements OnInit {
             this.isStrikeDiagonal2 = true;
         }
         this.isGameOver = true;
+        this.togglePlayerService.firstPlayer = false;
+        this.togglePlayerService.secondPlayer = false;
       }
     }
   }
 
   resetGame() {
+    this.togglePlayerService.firstPlayer = true;
+    this.togglePlayerService.secondPlayer = false;
     for(let i = 0; i < this.isBoxXPress.length; i++) {
       setTimeout(() => {
         this.isBoxOPress[i] = false;
