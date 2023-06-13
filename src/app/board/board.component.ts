@@ -110,6 +110,7 @@ export class BoardComponent implements OnInit {
         this.isGameOver = true;
         this.togglePlayerService.firstPlayer = false;
         this.togglePlayerService.secondPlayer = false;
+        this.togglePlayerService.firstPlayerScore++;
       } else if (
         this.isBoxOPress[box1] &&
         this.isBoxOPress[box2] &&
@@ -145,6 +146,7 @@ export class BoardComponent implements OnInit {
         this.isGameOver = true;
         this.togglePlayerService.firstPlayer = false;
         this.togglePlayerService.secondPlayer = false;
+        this.togglePlayerService.secondPlayerScore++;
       }
     }
   }

@@ -1,11 +1,11 @@
 <div class="player-tracker-container">
     <div class="player-tracker" [ngClass]="{'player-turn': togglePlayerService.firstPlayer}">
       <img class="symbol-xo" src="assets/images/close.png" alt="x-images">
-      <span class="current-score">-</span>
+      <span class="current-score">{{togglePlayerService.firstPlayerScore !== 0 ? togglePlayerService.firstPlayerScore : '-'}}</span>
     </div>
     <div class="player-tracker" [ngClass]="{'player-turn': togglePlayerService.secondPlayer}">
       <img class="symbol-xo" src="assets/images/letter-o.png" alt="x-images">
-      <span class="current-score">-</span>
+      <span class="current-score">{{togglePlayerService.secondPlayerScore !== 0 ? togglePlayerService.secondPlayerScore : '-'}}</span>
     </div>
   </div>
 
