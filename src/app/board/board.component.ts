@@ -40,6 +40,7 @@ export class BoardComponent implements OnInit {
   isStrikeDiagonal2: boolean = false;
 
   clickedBox(index: number) {
+
     if(!this.isGameOver) {
       if(!this.isBoxDisabled[index]) {
         this.isBoxDisabled[index] = true;

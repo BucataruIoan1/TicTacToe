@@ -7,6 +7,7 @@ import { NavbarComponent } from './board/navbar/navbar.component';
 import { PlayerTrackerComponent } from './board/navbar/player-tracker/player-tracker.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgbAlertModule } from '@ng-bootstrap/ng-bootstrap';
+import { FooterComponent } from './board/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { NgbAlertModule } from '@ng-bootstrap/ng-bootstrap';
     BoardComponent,
     NavbarComponent,
     PlayerTrackerComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

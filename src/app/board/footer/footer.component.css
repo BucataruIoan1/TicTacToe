@@ -1,0 +1,13 @@
+.footer {
+    height: 50px;
+    background-color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.copyright-text {
+    color: #70757a;
+    font-size: 18px;
+    margin-bottom: 0;
+}

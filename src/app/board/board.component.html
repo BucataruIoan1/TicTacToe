@@ -1,37 +1,65 @@
 <div class="board-game-container">
-    <app-navbar></app-navbar>
-    <div class="board-game">
-        <div class="box-container">
-            <div class="grid-item" *ngFor="let item of boxItems; let i = index"
-            [ngClass]="{
-                'border-box-0': i === 0,
-                'border-box-1': i === 1,
-                'border-box-2': i === 2,
-                'border-box-3': i === 3,
-                'border-box-5': i === 5,
-                'border-box-6': i === 6,
-                'border-box-7': i === 7,
-                'border-box-8': i === 8,
-                'x-cell': isBoxXPress[i],
-                'o-cell': isBoxOPress[i]
-            }"
-            [class.disabled]="isBoxDisabled[i]"
-            (click)="clickedBox(i)">
-        </div>
-        </div>
-        <div [ngClass]="isStrikeRow1 ? 'strike-container' : ''" [ngClass]="isStrikeRow2 ? 'strike-container' : ''"
-            [ngClass]="isStrikeRow3 ? 'strike-container' : ''" [ngClass]="isStrikeColumn1 ? 'strike-container' : ''"
-            [ngClass]="isStrikeColumn2 ? 'strike-container' : ''" [ngClass]="isStrikeColumn3 ? 'strike-container' : ''"
-            [ngClass]="isStrikeDiagonal1 ? 'strike-container' : ''" [ngClass]="isStrikeDiagonal2 ? 'strike-container' : ''">
-            <div [ngClass]="isStrikeRow1 ? 'strike strike-row-1' : isStrikeRow2 ? 'strike strike-row-2' : isStrikeRow3 ? 'strike strike-row-3' : 
-                isStrikeColumn1 ? 'strike strike-column-1' : isStrikeColumn2 ? 'strike strike-column-2' : isStrikeColumn3 ? 'strike strike-column-3' :
-                isStrikeDiagonal1 ? 'strike strike-diagonal-1' : isStrikeDiagonal2 ? 'strike strike-diagonal-2' : ''">
-            </div>
-        </div>
+  <app-navbar></app-navbar>
+  <div class="board-game">
+    <div class="box-container">
+      <div
+        class="grid-item"
+        *ngFor="let item of boxItems; let i = index"
+        [ngClass]="{
+          'border-box-0': i === 0,
+          'border-box-1': i === 1,
+          'border-box-2': i === 2,
+          'border-box-3': i === 3,
+          'border-box-5': i === 5,
+          'border-box-6': i === 6,
+          'border-box-7': i === 7,
+          'border-box-8': i === 8,
+          'x-cell': isBoxXPress[i],
+          'o-cell': isBoxOPress[i]
+        }"
+        [class.disabled]="isBoxDisabled[i]"
+        (click)="clickedBox(i)"
+      ></div>
     </div>
-    
-    <div class="footer">
-    <button type="button" class="btn btn-secondary" (click)="resetGame()">Reset Game</button>
+    <div
+      [ngClass]="isStrikeRow1 ? 'strike-container' : ''"
+      [ngClass]="isStrikeRow2 ? 'strike-container' : ''"
+      [ngClass]="isStrikeRow3 ? 'strike-container' : ''"
+      [ngClass]="isStrikeColumn1 ? 'strike-container' : ''"
+      [ngClass]="isStrikeColumn2 ? 'strike-container' : ''"
+      [ngClass]="isStrikeColumn3 ? 'strike-container' : ''"
+      [ngClass]="isStrikeDiagonal1 ? 'strike-container' : ''"
+      [ngClass]="isStrikeDiagonal2 ? 'strike-container' : ''"
+    >
+      <div
+        [ngClass]="
+          isStrikeRow1
+            ? 'strike strike-row-1'
+            : isStrikeRow2
+            ? 'strike strike-row-2'
+            : isStrikeRow3
+            ? 'strike strike-row-3'
+            : isStrikeColumn1
+            ? 'strike strike-column-1'
+            : isStrikeColumn2
+            ? 'strike strike-column-2'
+            : isStrikeColumn3
+            ? 'strike strike-column-3'
+            : isStrikeDiagonal1
+            ? 'strike strike-diagonal-1'
+            : isStrikeDiagonal2
+            ? 'strike strike-diagonal-2'
+            : ''
+        "
+      ></div>
     </div>
-</div>
+  </div>
 
+  <div class="reset-button">
+    <button type="button" class="btn btn-secondary" (click)="resetGame()">Reset Game</button>
+  </div>
+
+  <div class="footer-section">
+    <app-footer></app-footer>
+  </div>
+</div>

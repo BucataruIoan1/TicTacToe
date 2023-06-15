@@ -4,7 +4,7 @@
 }
 
 .board-game {
-    height: 70vh;
+    height: 60vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -106,12 +106,6 @@
     pointer-events: none;
 }
 
-.footer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 .strike-container{
     position: absolute;
     top: 0;
@@ -131,19 +125,19 @@
 .strike-row-1 {
     width: 450px;
     height: 4px;
-    top: 175px;
+    top: 125px;
 }
 
 .strike-row-2 {
     width: 450px;
     height: 4px;
-    top: 330px;
+    top: 280px;
 }
 
 .strike-row-3 {
     width: 450px;
     height: 4px;
-    top: 485px;
+    top: 435px;
 }
 
 .strike-column-1 {
@@ -175,3 +169,19 @@
     height: 4px;
     transform: skewY(-45deg);
 }
+
+.reset-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.footer-section {
+    height: 50px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+/*********************************************** MEDIA QUERY*************************************/
