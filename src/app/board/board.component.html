@@ -19,39 +19,26 @@
         }"
         [class.disabled]="isBoxDisabled[i]"
         (click)="clickedBox(i)"
-      ></div>
+      >
+      <div *ngIf="(i === 0 || i === 1 || i === 2) && isBoxXPress[0] && isBoxXPress[1] && isBoxXPress[2]" class="horizontal-line"></div>
+      <div *ngIf="(i === 3 || i === 4 || i === 5) && isBoxXPress[3] && isBoxXPress[4] && isBoxXPress[5]" class="horizontal-line"></div>
+      <div *ngIf="(i === 6 || i === 7 || i === 8) && isBoxXPress[6] && isBoxXPress[7] && isBoxXPress[8]" class="horizontal-line"></div>
+      <div *ngIf="(i === 0 || i === 1 || i === 2) && isBoxOPress[0] && isBoxOPress[1] && isBoxOPress[2]" class="horizontal-line"></div>
+      <div *ngIf="(i === 3 || i === 4 || i === 5) && isBoxOPress[3] && isBoxOPress[4] && isBoxOPress[5]" class="horizontal-line"></div>
+      <div *ngIf="(i === 6 || i === 7 || i === 8) && isBoxOPress[6] && isBoxOPress[7] && isBoxOPress[8]" class="horizontal-line"></div>
+
+      <div *ngIf="(i === 0 || i === 3 || i === 6) && isBoxXPress[0] && isBoxXPress[3] && isBoxXPress[6]" class="vertical-line"></div>
+      <div *ngIf="(i === 1 || i === 4 || i === 7) && isBoxXPress[1] && isBoxXPress[4] && isBoxXPress[7]" class="vertical-line"></div>
+      <div *ngIf="(i === 2 || i === 5 || i === 8) && isBoxXPress[2] && isBoxXPress[5] && isBoxXPress[8]" class="vertical-line"></div>
+      <div *ngIf="(i === 0 || i === 3 || i === 6) && isBoxOPress[0] && isBoxOPress[3] && isBoxOPress[6]" class="vertical-line"></div>
+      <div *ngIf="(i === 1 || i === 4 || i === 7) && isBoxOPress[1] && isBoxOPress[4] && isBoxOPress[7]" class="vertical-line"></div>
+      <div *ngIf="(i === 2 || i === 5 || i === 8) && isBoxOPress[2] && isBoxOPress[5] && isBoxOPress[8]" class="vertical-line"></div>  
+    
+      <div *ngIf="(i === 0 || i === 4 || i === 8) && isBoxXPress[0] && isBoxXPress[4] && isBoxXPress[8]" class="oblique-line-1"></div>
+      <div *ngIf="(i === 2 || i === 4 || i === 6) && isBoxXPress[2] && isBoxXPress[4] && isBoxXPress[6]" class="oblique-line-2"></div>
+      <div *ngIf="(i === 0 || i === 4 || i === 8) && isBoxOPress[0] && isBoxOPress[4] && isBoxOPress[8]" class="oblique-line-1"></div>
+      <div *ngIf="(i === 2 || i === 4 || i === 6) && isBoxOPress[2] && isBoxOPress[4] && isBoxOPress[6]" class="oblique-line-2"></div>
     </div>
-    <div
-      [ngClass]="isStrikeRow1 ? 'strike-container' : ''"
-      [ngClass]="isStrikeRow2 ? 'strike-container' : ''"
-      [ngClass]="isStrikeRow3 ? 'strike-container' : ''"
-      [ngClass]="isStrikeColumn1 ? 'strike-container' : ''"
-      [ngClass]="isStrikeColumn2 ? 'strike-container' : ''"
-      [ngClass]="isStrikeColumn3 ? 'strike-container' : ''"
-      [ngClass]="isStrikeDiagonal1 ? 'strike-container' : ''"
-      [ngClass]="isStrikeDiagonal2 ? 'strike-container' : ''"
-    >
-      <div
-        [ngClass]="
-          isStrikeRow1
-            ? 'strike strike-row-1'
-            : isStrikeRow2
-            ? 'strike strike-row-2'
-            : isStrikeRow3
-            ? 'strike strike-row-3'
-            : isStrikeColumn1
-            ? 'strike strike-column-1'
-            : isStrikeColumn2
-            ? 'strike strike-column-2'
-            : isStrikeColumn3
-            ? 'strike strike-column-3'
-            : isStrikeDiagonal1
-            ? 'strike strike-diagonal-1'
-            : isStrikeDiagonal2
-            ? 'strike strike-diagonal-2'
-            : ''
-        "
-      ></div>
     </div>
   </div>
 

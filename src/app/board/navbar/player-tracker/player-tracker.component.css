@@ -30,3 +30,9 @@
     color: #70757a;
     padding-right: 3%;
 }
+
+@media (max-width: 786px) {
+    .player-tracker {
+        width: 150px;
+    }
+}

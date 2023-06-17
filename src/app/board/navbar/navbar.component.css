@@ -11,3 +11,9 @@
     margin: 10px 0 5px 0;
     color: #70757a;
 }
+
+@media (max-width: 786px) {
+    .navbar {
+        margin-bottom: 10px;
+    }
+}
