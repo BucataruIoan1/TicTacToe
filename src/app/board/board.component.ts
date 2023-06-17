@@ -41,6 +41,8 @@ export class BoardComponent implements OnInit {
 
   clickedBox(index: number) {
 
+    this.togglePlayerService.isGameStart = true;
+
     if(!this.isGameOver) {
       if(!this.isBoxDisabled[index]) {
         this.isBoxDisabled[index] = true;
@@ -80,8 +82,6 @@ export class BoardComponent implements OnInit {
         this.isBoxXPress[box2] &&
         this.isBoxXPress[box3]
       ) {
-        // X player wins
-        console.log("X player wins");
         if(this.isBoxXPress[box1] === this.isBoxXPress[0] && this.isBoxXPress[box1] === this.isBoxXPress[1] && 
           this.isBoxXPress[box1] === this.isBoxXPress[2]) {
             this.isStrikeRow1 = true;
@@ -117,8 +117,6 @@ export class BoardComponent implements OnInit {
         this.isBoxOPress[box2] &&
         this.isBoxOPress[box3]
       ) {
-        // O player wins
-        console.log("O player wins");
         if(this.isBoxOPress[box1] === this.isBoxOPress[0] && this.isBoxOPress[box1] === this.isBoxOPress[1] && 
           this.isBoxOPress[box1] === this.isBoxOPress[2]) {
             this.isStrikeRow1 = true;
@@ -153,6 +151,7 @@ export class BoardComponent implements OnInit {
   }
 
   resetGame() {
+    this.togglePlayerService.isGameStart = false;
     this.togglePlayerService.firstPlayer = true;
     this.togglePlayerService.secondPlayer = false;
     for(let i = 0; i < this.isBoxXPress.length; i++) {

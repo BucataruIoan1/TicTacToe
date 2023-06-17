@@ -36,3 +36,9 @@
         width: 150px;
     }
 }
+
+@media (max-width: 320px) {
+    .player-tracker {
+        width: 100px;
+    }
+}

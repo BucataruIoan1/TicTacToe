@@ -5,6 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class TogglePlayerService {
 
+  isGameStart: boolean = false;
   firstPlayer: boolean = true;
   secondPlayer: boolean = false;
   firstPlayerScore: number = 0;

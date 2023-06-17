@@ -1,4 +1,7 @@
 <div class="navbar">
         <app-player-tracker></app-player-tracker>
-    <span class="info-game">Start the game or select a player</span>
+    <span class="info-game">{{!togglePlayerService.isGameStart ? "Click on a box to start the game" :
+        togglePlayerService.firstPlayer ? "Player X turn" : togglePlayerService.secondPlayer ? "Player O turn" : 'Game Over'}}
+    </span>
 </div>
+

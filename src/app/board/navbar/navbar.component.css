@@ -12,8 +12,9 @@
     color: #70757a;
 }
 
-@media (max-width: 786px) {
+@media (max-width: 786px) or (max-height: 600px) {
     .navbar {
         margin-bottom: 10px;
+        height: 21vh;
     }
 }
